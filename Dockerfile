@@ -10,7 +10,8 @@ LABEL Description="PHP Docker for Woocommerce on Steroids based on Julian Xhokax
 
 # enable extra Apache modules
 RUN a2enmod rewrite \
-  && a2enmod headers
+  && a2enmod headers \
+  && a2enmod ssl
 
 # install the PHP extensions we need
 RUN apt-get update \
@@ -71,3 +72,4 @@ RUN { \
   } >> /etc/apache2/apache2.conf
 
 VOLUME /var/www/html
+VOLUME /etc/apache2/ssl
