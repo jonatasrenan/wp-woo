@@ -71,5 +71,8 @@ RUN { \
     echo "TraceEnable off"; \
   } >> /etc/apache2/apache2.conf
 
+COPY composer.phar /usr/local/bin/composer
+
+
 VOLUME /var/www/html
 VOLUME /etc/apache2/ssl
